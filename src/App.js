@@ -50,6 +50,7 @@ function App() {
                       </div>
                       <div id='box2'>
                           <InputBox label="To" 
+                          read={true}
                           amount={cnvrtAmt} 
                           onAmountChange={(value)=>setCnvrtAmt(value)}
                           currencyOptions={options}  

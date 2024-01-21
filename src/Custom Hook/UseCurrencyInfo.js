@@ -6,6 +6,7 @@ export default function useCurrencyInfo(currency){
         fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
         .then((resp)=>resp.json())
         .then((resp)=>setData(resp[currency]))
+        .catch((error)=>error)
        // console.log(data);
     },[currency])
     return data

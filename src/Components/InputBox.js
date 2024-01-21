@@ -8,6 +8,7 @@ export default function InputBox({
     selectCurrency,
     currencyChange,
     onAmountChange,
+    read=false,
 })
 {
     const amtId = useId();//This Hook will generate random unique ids but it cannot be used in generating different value in keys.
@@ -18,7 +19,12 @@ export default function InputBox({
                 <label htmlFor={amtId} >
                     {label}
                 </label>
-                <input type="number" placeholder="Amount" id={amtId} value={amount} onChange={(e)=>  onAmountChange && onAmountChange(Number(e.target.value))}/> {/*This will check first that onAmountChange function available or not if not thn exit from arrow function and if yes thn pass parameter to the onAmountChange function.This will check first that onAmountChange function available or not if not thn exit from arrow funvtion and if yes thn pass arguments to the onAmountChange function. */}
+                <input type="number" 
+                placeholder="Amount" 
+                readOnly={read}
+                id={amtId} 
+                value={amount} 
+                onChange={(e)=>  onAmountChange && onAmountChange(Number(e.target.value))}/> {/*This will check first that onAmountChange function available or not if not thn exit from arrow function and if yes thn pass parameter to the onAmountChange function.This will check first that onAmountChange function available or not if not thn exit from arrow funvtion and if yes thn pass arguments to the onAmountChange function. */}
             </div>
             <div id="cbox">
                 <p id="ctext">Currency Type</p>
